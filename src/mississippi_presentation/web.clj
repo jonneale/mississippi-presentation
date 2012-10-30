@@ -1,10 +1,17 @@
 (ns mississippi-presentation.web
-  (:use [ring.adapter.jetty :only [run-jetty]]))
+  (:require [mississippi-presentation.slides :as slides]
+            [compojure.route                 :as route])
+  (:use  compojure.core
+         ring.adapter.jetty
+         ring.util.response))
 
-(defn app [req]
-  {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body "Hello, world"})
+(defroutes app
+  (GET "/"
+       []
+       (slides/html))
+
+  (route/not-found 
+   "<h1>Page not found</h1>"))
 
 (defn -main [port]
   (run-jetty app {:port (Integer. port)}))
