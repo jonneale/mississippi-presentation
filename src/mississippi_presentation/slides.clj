@@ -23,12 +23,29 @@
                     [:h1 "What is Mississippi?"]]
                    [:section
                     [:pre
-                     [:code  "(use '[mississippi.core]"]]
+                     [:code.clojure  "(use '[mississippi.core]"]]
                     [:pre
                      [:code
                       "(validate {:a nil :b \"value\"} 
           {:a [(required)] 
-           :b [(required)]})"]]]]]
+           :b [(required)]})"]]
+                    [:pre
+                     [:code "{:errors {:a (\"required\")}, :a nil, :b \"value\"}"]]]
+                   [:section
+                    [:h1 "Why?"]]
+                   [:section
+                    [:img {:src "/images/homepage.png"}]]
+                   [:section
+                    [:img {:src "/images/process.png"}]]
+                   [:section
+                    [:img {:src "/images/suppliers.png"}]]
+                   [:section
+                    [:h1 "Gas Direct Debit Amount"]
+                    [:ol
+                     [:li [:strong "Valid Values: "] "N6"]
+                     [:li [:strong "Mandatory?: "] "Mandatory if field 45 = MDD"]
+                     [:li [:strong "Description: "] "Amount the customer would like to pay per month if paying by MDD. Estimated spend / 12 (minimum amount £10 pm and rounded to the nearest 50p)"]]]]]
+                 
                  [:script {:src "/lib/js/head.min.js"}]
                  [:script {:src "/js/reveal.min.js"}]
                  [:script {:type "text/javascript"}
