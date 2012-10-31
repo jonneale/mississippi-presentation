@@ -31,7 +31,8 @@
                      [:code.clojure (code :what-is-mississippi)]]
                     [:br]
                     [:br]
-                    [:code (code :errors)]]
+                    [:pre.fragment
+                     [:code.clojure (code :errors)]]]
                    [:section
                     [:h1 "Why?"]]
                    [:section
