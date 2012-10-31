@@ -23,56 +23,28 @@
                    [:section
                     [:h1 "What is Mississippi?"]]
                    [:section
+                    [:h1 "Simple Map Validation"]
                     [:pre.fragment
-                     [:code.clojure (code :require-mississippi)]]
+                     [:code.clojure (code :require-mississippi)]]]
+                   [:section
                     [:br]
+                    [:br]
+                    [:ol
+                     [:li.fragment "Define validations map"]
+                     [:li.fragment "Take every key in validations map"]
+                     [:li.fragment "Get value for that key in subject"]
+                     [:li.fragment "Apply validation value to subject value"]]]
+                   [:section
                     [:br]
                     [:pre.fragment
                      [:code.clojure (code :what-is-mississippi)]]
                     [:br]
-                    [:br]
                     [:pre.fragment
                      [:code.clojure (code :errors)]]]
                    [:section
-                    [:h1 "Why?"]]
-                   [:section
-                    [:img {:src "/images/homepage.png"}]]
-                   [:section
-                    [:img {:src "/images/process.png"}]]
-                   [:section
-                    [:img {:src "/images/suppliers.png"}]]
-                   [:section
-                    [:h1 "Gas Direct Debit Amount"]
-                    [:ol
-                     [:li.fragment [:strong "Valid Values: "] "N6"]
-                     [:li.fragment [:strong "Mandatory?: "] "Mandatory if field 45 = MDD"]
-                     [:li.fragment [:strong "Description: "] "Amount the customer would like to pay per month if paying by MDD. Estimated spend / 12 (minimum amount £10 pm and rounded to the nearest 50p)"]]]
-                   [:section
-                    [:h1 "Gas Direct Debit Amount"]
-                    [:img {:src "/images/direct-debit-amount.png"}]]
-                   [:section
-                    [:h1 "Mississippi"]
-                    [:img {:src "/images/small-logo.png"}]
-                    [:p [:a {:href "https://github.com/mikejones/mississippi"} "https://github.com/mikejones/mississippi"]]]
-                   [:section
                     [:h1 "Syntax"]
                     [:pre
-                     [:code (code :syntax)]]]
-                   [:section
-                    [:h1 "Define Validations"]
-                    [:br]
-                    [:br]
-                    [:pre
-                     [:code (code :define-validations)]]]
-                   [:section
-                    [:h1 "How?"]]
-                   [:section
-                    [:br]
-                    [:br]
-                    [:ol
-                     [:li.fragment "Take every key in validations map"]
-                     [:li.fragment "Get value for that key in subject"]
-                     [:li.fragment "Apply validation value to subject value"]]]
+                     [:code (code :syntax)]]]                   
                    [:section
                     [:pre.fragment
                      [:code
@@ -105,6 +77,35 @@
                     [:br]
                     [:pre
                      [:code.clojure (code :custom)]]]
+                   [:section
+                    [:h1 "Why?"]]
+                   [:section
+                    [:h1 "Explicit contracts at integration points"]]
+                   [:section
+                    [:img {:src "/images/homepage.png"}]]
+                   [:section
+                    [:img {:src "/images/process.png"}]]
+                   [:section
+                    [:img {:src "/images/suppliers.png"}]]
+                   [:section
+                    [:h1 "Gas Direct Debit Amount"]
+                    [:ol
+                     [:li.fragment [:strong "Valid Values: "] "N6"]
+                     [:li.fragment [:strong "Mandatory?: "] "Mandatory if field 45 = MDD"]
+                     [:li.fragment [:strong "Description: "] "Amount the customer would like to pay per month if paying by MDD. Estimated spend / 12 (minimum amount £10 pm and rounded to the nearest 50p)"]]]
+                   [:section
+                    [:h1 "Gas Direct Debit Amount"]
+                    [:img {:src "/images/direct-debit-amount.png"}]]
+                   [:section
+                    [:h1 "Our Validations"]
+                    [:br]
+                    [:br]
+                    [:pre
+                     [:code (code :define-validations)]]]
+                   [:section
+                    [:h1 "Mississippi"]
+                    [:img {:src "/images/small-logo.png"}]
+                    [:p [:a {:href "https://github.com/mikejones/mississippi"} "https://github.com/mikejones/mississippi"]]]
                    [:section
                     [:h1 "Questions?"]]
                    [:section
