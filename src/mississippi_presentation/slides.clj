@@ -23,17 +23,12 @@
                     [:h1 "What is Mississippi?"]]
                    [:section
                     [:pre
-                     [:code "
-                   (use '[mississippi.core])
-                   ;; nil
-
-                  (validate {:a nil :b \"value\" } 
-                                 {:a [(required)] 
-                                 :b [(required)]})
-
-                  {:errors {:a (\"required\")}, 
-                   :a nil, 
-                   :b \"value\"}"]]]]]
+                     [:code  "(use '[mississippi.core]"]]
+                    [:pre
+                     [:code
+                      "(validate {:a nil :b \"value\"} 
+          {:a [(required)] 
+           :b [(required)]})"]]]]]
                  [:script {:src "/lib/js/head.min.js"}]
                  [:script {:src "/js/reveal.min.js"}]
                  [:script {:type "text/javascript"}
