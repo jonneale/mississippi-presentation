@@ -7,5 +7,6 @@
                  [ring/ring-core "1.1.1"]
                  [ring/ring-jetty-adapter "1.1.0"]
                  [hiccup "1.0.0"]
-                 [compojure "1.1.1"]]
+                 [compojure "1.1.1"]
+                 [mississippi "1.0.1"]]
   :min-lein-version "2.0.0")

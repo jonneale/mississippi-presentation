@@ -1,7 +1,7 @@
 (ns mississippi-presentation.slides
-  (:require [hiccup.core                :as hiccup]
-            [hiccup.page                :as page])
-  (:use     [mississippi-presentation.code-snippets]))
+  (:require [hiccup.core                             :as hiccup]
+            [hiccup.page                             :as page]
+            [mississippi-presentation.code-snippets  :as code]))
 
 (defn html
   []
@@ -25,48 +25,52 @@
                    [:section
                     [:h1 "Simple Map Validation"]
                     [:pre.fragment
-                     [:code.clojure (code :require-mississippi)]]]
+                     [:code.clojure code/require-mississippi]]]
+                   [:section
+                    [:br]
+                    [:pre.fragment
+                     [:code.clojure code/what-is-mississippi]]
+                    [:br]
+                    [:pre.fragment
+                     [:code.clojure code/errors]]]
+                   [:section
+                    [:h1 "How?"]]
                    [:section
                     [:br]
                     [:br]
                     [:ol
                      [:li.fragment "Define validations map"]
+                     [:li.fragment "Call validate on subject"]
                      [:li.fragment "Take every key in validations map"]
                      [:li.fragment "Get value for that key in subject"]
-                     [:li.fragment "Apply validation value to subject value"]]]
-                   [:section
-                    [:br]
-                    [:pre.fragment
-                     [:code.clojure (code :what-is-mississippi)]]
-                    [:br]
-                    [:pre.fragment
-                     [:code.clojure (code :errors)]]]
-                   [:section
-                    [:h1 "Syntax"]
-                    [:pre
-                     [:code (code :syntax)]]]                   
+                     [:li.fragment "Apply validation function to subject value"]
+                     [:li.fragment "If function evaluates to false, assoc an error"]]]                  
                    [:section
                     [:pre.fragment
                      [:code
-                      (code :subject)]]
-                    [:br]
+                      code/validations]]
+                    [:br]                    
                     [:pre.fragment
                      [:code
-                      (code :validations)]]
+                      code/subject]]
                     [:br
                      [:pre.fragment
                       [:code
-                       (code :call-function)]]]]
+                       code/validate]]]
+                    [:br
+                     [:pre.fragment
+                      [:code
+                       code/call-function]]]]
                    [:section
                     [:h1 "Required"]
                     [:pre
-                     [:code (code :required)]]]
+                     [:code code/required]]]
                    [:section
                     [:h1 "Built in validators"]
                     [:ul
                      [:li
                       [:code "numeric"]]
-                     [:li [:code "require"]]
+                     [:li [:code "required"]]
                      [:li [:code "member-of ;; (member-of #{:a :b :c})"]]
                      [:li [:code "in-range ;; (in-range 1 10)"]]
                      [:li [:code "subset-of ;; (subset-of #{:a :b :c})"]]
@@ -76,7 +80,26 @@
                     [:h1 "Custom Validators"]
                     [:br]
                     [:pre
-                     [:code.clojure (code :custom)]]]
+                     [:code.clojure code/custom]]]
+                   [:section
+                    [:br]
+                    [:pre
+                     [:code.clojure code/what-is-mississippi]]
+                    [:br]
+                    [:pre
+                     [:code.clojure code/errors]]]
+                   [:section
+                    [:h1 "Multiple Validations"]]
+                   [:section
+                    [:br]
+                    [:pre.fragment
+                     [:code.clojure code/multiple-validations]]
+                    [:pre.fragment
+                     [:code.clojure code/multiple-subjects]]
+                    [:pre.fragment
+                     [:code.clojure code/apply-multiple-validations]]
+                    [:pre.fragment
+                     [:code.clojure code/multiple-errors]]]
                    [:section
                     [:h1 "Why?"]]
                    [:section
@@ -101,7 +124,12 @@
                     [:br]
                     [:br]
                     [:pre
-                     [:code (code :define-validations)]]]
+                     [:code code/define-validations]]]
+                   [:section
+                    [:h1 "Our (actual) Validations"]]
+                   [:section
+                    [:pre
+                     [:code code/gas-direct-debit]]]
                    [:section
                     [:h1 "Mississippi"]
                     [:img {:src "/images/small-logo.png"}]
@@ -117,7 +145,9 @@
                      [:a {:href "https://twitter.com/ryangreenhall"} "@ryangreenhall"] ", "
                      "Paul Krause, "
                      [:a {:href "https://twitter.com/ryangreenhall"} "@gar3thjon3s"] ", "
-                     [:a {:href "http://twitter.com/jon_neale"} "@jon_neale"]]]
+                     [:a {:href "http://twitter.com/jon_neale"} "@jon_neale"]]
+                    [:p 
+                     "Slides are available at: "[:a {:href "http://skillsmatter-mississippi.heroku.com"} "http://skillsmatter-mississippi.heroku.com"]]]
                    ]]
                  [:script {:src "/lib/js/head.min.js"}]
                  [:script {:src "/js/reveal.min.js"}]

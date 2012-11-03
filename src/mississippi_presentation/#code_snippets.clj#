@@ -6,7 +6,7 @@
   [length & {when-fn :when}]
   [(fn [subject] (= (count (str subject)) length)	  
                       :msg (str \"length must be \" length) 
-                      :when when-fn)])")
+                      :when when-fn)])n")
 
 (def subject
   "(def subject     {:a nil :b \"value\"})")
