@@ -4,15 +4,16 @@
 (def custom
   "(defn should-be-of-length
   [length & {when-fn :when}]
-  [(fn [subject] (= (count (str subject)) length)	  
-                      :msg (str \"length must be \" length) 
-                      :when when-fn)])")
+  [#(= (count (str %)) length)	  
+   :msg (str \"length must be \" length) 
+   :when when-fn)])")
 
 (def subject
-  "(def subject     {:a nil :b \"value\"})")
+  "(def subject {:a nil :b \"value\"})")
 
 (def validations
-  "(def validations {:a [(required)] :b [(required)]})")
+  "(def validations {:a [(required)]
+                  :b [(required)]})")
 
 (def validate
   "(validate subject validations)")
@@ -30,10 +31,11 @@
            :b [(required)]})")
 
 (def define-validations
-  "<span class='fragment'>{:GAS_PAYMENT_AMOUNT </span>
-  <span class='fragment'> [(m/required </span>
-  <span class='fragment'>  :when direct-debit? </span>
-  <span class='fragment'>  :msg \"Direct Debit amount must be specified\")]} <span>")
+  "{:GAS_PAYMENT_AMOUNT 
+  [(m/required
+    :when direct-debit?
+    :msg \"Direct Debit amount
+           must be specified\")]}")
 
 
 (def required
@@ -44,36 +46,52 @@
    :when when-fn])")
 
 (def errors
-  "{:errors {:a (\"required\")}, :a nil, :b \"value\"}")
+  "
+{:errors {:a (\"required\")},
+ :a nil,
+ :b \"value\"}")
 
 (def multiple-validations
-  "(def validations {:year-of-birth [(required) (numeric)]})")
+  "(def validations
+  {:year-of-birth
+   [(required) (numeric)]})")
 
 (def multiple-subjects
-  "def subjects [{:name \"alice\"   :year-of-birth nil}
-              {:name \"bob\"     :year-of-birth \"last year\"}
-              {:name \"charlie\" :year-of-birth 1976}])")
+  "def subjects
+  [{:name \"alice\"
+    :year-of-birth nil}
+   {:name \"bob\"
+    :year-of-birth \"last year\"}
+   {:name \"charlie\"
+    :year-of-birth 1976}])")
 
 (def apply-multiple-validations
-  "(map (fn[s] (validate s validations)) subjects)")
+  "(map
+    #(validate % validations)
+    subjects)")
 
 (def multiple-errors
   "({:name \"alice\",
-  <span style='color:#3387CC'>:year-of-birth</span> nil,
-  :errors {<span style='color:#3387CC'>:year-of-birth</span> (\"required\" \"not a number\")}}
+  :year-of-birth nil,
+  :errors {:year-of-birth
+          (\"required\"
+           \"not a number\")}}
  {:name \"bob\",
-  <span style='color:#3387CC'>:year-of-birth</span> \"last year\",
-  :errors {<span style='color:#3387CC'>:year-of-birth</span> (\"not a number\")}}
+  :year-of-birth \"last year\",
+  :errors {:year-of-birth
+          (\"not a number\")}}
  {:name \"charlie\",
-  :<span style='color:#3387CC'>:year-of-birth</span> 1976,
+  :year-of-birth 1976,
   :errors {}})")
 
 (def gas-direct-debit
   "{:GAS_PAYMENT_AMOUNT
-   [(v/should-not-be-blank
-     :when (fn[s] (and (gas-switch? s)
-                       (direct-debit? s)))
-     (v/length :max 10)
-     (v/should-be-blank
-      :when (fn[s] (or (not (gas-switch? s))
-                       (not (direct-debit? s))))))]}")
+  [(v/length :max 10)
+   (v/should-not-be-blank
+    :when #(and (gas-switch? %)
+                (direct-debit? %))
+   (v/should-be-blank
+    :when
+      #(or
+         (not (gas-switch? %))
+         (not (direct-debit? %)))))]}")

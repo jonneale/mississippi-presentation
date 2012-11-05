@@ -11,7 +11,8 @@
                  [:title "Mississippi - simple map validations"]
                  [:link {:href "/stylesheets/reveal.css" :media "screen" :rel "stylesheet" :type "text/css"}]
                  [:link {:href "/stylesheets/theme/default.css" :media "screen" :rel "stylesheet" :type "text/css" :id "theme"}]
-                 [:link {:href "/lib/css/sunburst.css" :media "screen" :rel "stylesheet" :type "text/css"}]]
+                 [:link {:href "/syntaxhighlighter/styles/shCore.css" :media "screen" :rel "stylesheet" :type "text/css"}]
+                 [:link {:href "/syntaxhighlighter/styles/shThemeDefault.css" :media "screen" :rel "stylesheet" :type "text/css"}]]
                 [:body 
                  [:div.reveal
                   [:div.slides
@@ -24,15 +25,18 @@
                     [:h1 "What is Mississippi?"]]
                    [:section
                     [:h1 "Simple Map Validation"]
-                    [:pre.fragment
-                     [:code.clojure code/require-mississippi]]]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } 
+                      code/require-mississippi]]]
                    [:section
                     [:br]
-                    [:pre.fragment
-                     [:code.clojure code/what-is-mississippi]]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } 
+                      code/what-is-mississippi]]
                     [:br]
-                    [:pre.fragment
-                     [:code.clojure code/errors]]]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } 
+                      code/errors]]]
                    [:section
                     [:h1 "How?"]]
                    [:section
@@ -46,25 +50,23 @@
                      [:li.fragment "Apply validation function to subject value"]
                      [:li.fragment "If function evaluates to false, assoc an error"]]]                  
                    [:section
-                    [:pre.fragment
-                     [:code
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } 
                       code/validations]]
-                    [:br]                    
-                    [:pre.fragment
-                     [:code
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } 
                       code/subject]]
-                    [:br
-                     [:pre.fragment
-                      [:code
-                       code/validate]]]
-                    [:br
-                     [:pre.fragment
-                      [:code
-                       code/call-function]]]]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } 
+                      code/validate]]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } 
+                      code/call-function]]]
                    [:section
                     [:h1 "Required"]
-                    [:pre
-                     [:code code/required]]]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" }
+                      code/required]]]
                    [:section
                     [:h1 "Built in validators"]
                     [:ul
@@ -78,28 +80,31 @@
                      [:li [:code "matches-email"]]]]
                    [:section
                     [:h1 "Custom Validators"]
-                    [:br]
+
                     [:pre
-                     [:code.clojure code/custom]]]
+                     {:class "brush: clojure" } code/custom]]
                    [:section
                     [:br]
-                    [:pre
-                     [:code.clojure code/what-is-mississippi]]
+                    [:pre {:class "brush: clojure" }
+                     code/what-is-mississippi]
                     [:br]
-                    [:pre
-                     [:code.clojure code/errors]]]
+                    [:pre {:class "brush: clojure" }
+                     code/errors]]
                    [:section
                     [:h1 "Multiple Validations"]]
                    [:section
-                    [:br]
-                    [:pre.fragment
-                     [:code.clojure code/multiple-validations]]
-                    [:pre.fragment
-                     [:code.clojure code/multiple-subjects]]
-                    [:pre.fragment
-                     [:code.clojure code/apply-multiple-validations]]
-                    [:pre.fragment
-                     [:code.clojure code/multiple-errors]]]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" }
+                      code/multiple-validations]]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" }
+                      code/multiple-subjects]]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" }
+                      code/apply-multiple-validations]]]
+                   [:section
+                    [:pre {:class "brush: clojure" }
+                     code/multiple-errors]]
                    [:section
                     [:h1 "Why?"]]
                    [:section
@@ -123,13 +128,13 @@
                     [:h1 "Our Validations"]
                     [:br]
                     [:br]
-                    [:pre
-                     [:code code/define-validations]]]
+                    [:pre {:class "brush: clojure" }
+                     code/define-validations]]
                    [:section
                     [:h1 "Our (actual) Validations"]]
                    [:section
-                    [:pre
-                     [:code code/gas-direct-debit]]]
+                    [:pre {:class "brush: clojure" }
+                     code/gas-direct-debit]]
                    [:section
                     [:h1 "Mississippi"]
                     [:img {:src "/images/small-logo.png"}]
@@ -149,13 +154,14 @@
                     [:p 
                      "Slides are available at: "[:a {:href "http://skillsmatter-mississippi.heroku.com"} "http://skillsmatter-mississippi.heroku.com"]]]
                    ]]
+                 [:script {:src "/syntaxhighlighter/scripts/shCore.js"}]
+                 [:script {:src "/js/jquery-1.8.2.min.js"}]
+                 [:script {:src "/clojure/shBrushClojure.js"}]
                  [:script {:src "/lib/js/head.min.js"}]
                  [:script {:src "/js/reveal.min.js"}]
                  [:script {:type "text/javascript"}
-                  "Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
+                  "$(document).ready(SyntaxHighlighter.all());
+                   Reveal.initialize({ controls: true, progress: true, history: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
@@ -163,6 +169,6 @@
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
-			});"]]]))
+			});
+"]]]))
