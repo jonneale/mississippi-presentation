@@ -59,13 +59,13 @@
 
 (def multiple-errors
   "({:name \"alice\",
-  :year-of-birth nil,
-  :errors {:year-of-birth (\"required\" \"not a number\")}}
+  <span style='color:#3387CC'>:year-of-birth</span> nil,
+  :errors {<span style='color:#3387CC'>:year-of-birth</span> (\"required\" \"not a number\")}}
  {:name \"bob\",
-  :year-of-birth \"last year\",
-  :errors {:year-of-birth (\"not a number\")}}
+  <span style='color:#3387CC'>:year-of-birth</span> \"last year\",
+  :errors {<span style='color:#3387CC'>:year-of-birth</span> (\"not a number\")}}
  {:name \"charlie\",
-  :year-of-birth 1976,
+  :<span style='color:#3387CC'>:year-of-birth</span> 1976,
   :errors {}})")
 
 (def gas-direct-debit
