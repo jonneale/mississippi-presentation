@@ -77,36 +77,7 @@
                      [:li [:code "matches"]]
                      [:li [:code "matches-email"]]]]
                    [:section
-                    [:h1 "Custom Validators"]
-
-                    [:pre
-                     {:class "brush: clojure" } code/custom]]
-                   [:section
-                    [:br]
-                    [:pre {:class "brush: clojure" }
-                     code/what-is-mississippi]
-                    [:br]
-                    [:pre {:class "brush: clojure" }
-                     code/errors]]
-                   [:section
-                    [:h1 "Multiple Validations"]]
-                   [:section
-                    [:div.fragment
-                     [:pre {:class "brush: clojure" }
-                      code/multiple-validations]]
-                    [:div.fragment
-                     [:pre {:class "brush: clojure" }
-                      code/multiple-subjects]]
-                    [:div.fragment
-                     [:pre {:class "brush: clojure" }
-                      code/apply-multiple-validations]]]
-                   [:section
-                    [:pre {:class "brush: clojure" }
-                     code/multiple-errors]]
-                   [:section
-                    [:h1 "Why?"]]
-                   [:section
-                    [:h1 "Explicit contracts at integration points"]]
+                    [:h1 "Custom Validators"]]
                    [:section
                     [:img {:src "/images/homepage.png"}]]
                    [:section
@@ -131,7 +102,7 @@
                    [:section
                     [:h1 "Our (actual) Validations"]]
                    [:section
-                    [:pre {:class "brush: clojure" }
+                    [:pre {:class "brush: clojure gutter: false;" }
                      code/gas-direct-debit]]
                    [:section
                     [:h1 "Mississippi"]
