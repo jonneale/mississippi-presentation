@@ -26,9 +26,12 @@
   "(use '[mississippi.core])")
 
 (def what-is-mississippi
-  "(validate {:a nil :b \"value\"} 
-          {:a [(required)] 
-           :b [(required)]})")
+  "(errors {:a nil :b \"value\"} 
+        {:a [(required)] 
+         :b [(required)]})")
+
+(def errors
+  "{:errors {:a (\"required\")}")
 
 (def define-validations
   "{:GAS_PAYMENT_AMOUNT 
@@ -37,6 +40,15 @@
     :msg \"Direct Debit amount
            must be specified\")]}")
 
+(def mississippi-validate
+  "(validate {:a nil :b \"value\"}
+          {:a [(required)]
+           :b [(required)]})")
+
+(def validation-errors
+  "{:errors {:a (\"required\")},
+ :a nil,
+ :b \"value\"}")
 
 (def required
   "(defn required
@@ -45,11 +57,6 @@
    :msg (or msg \"required\")
    :when when-fn])")
 
-(def errors
-  "
-{:errors {:a (\"required\")},
- :a nil,
- :b \"value\"}")
 
 (def multiple-validations
   "(def validations

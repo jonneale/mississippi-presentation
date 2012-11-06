@@ -38,17 +38,16 @@
                      [:pre {:class "brush: clojure" } 
                       code/errors]]]
                    [:section
-                    [:h1 "How?"]]
+                    [:br]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } 
+                      code/mississippi-validate]]
+                    [:br]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } 
+                      code/validation-errors]]]
                    [:section
-                    [:br]
-                    [:br]
-                    [:ol
-                     [:li.fragment "Define validations map"]
-                     [:li.fragment "Call validate on subject"]
-                     [:li.fragment "Take every key in validations map"]
-                     [:li.fragment "Get value for that key in subject"]
-                     [:li.fragment "Apply validation function to subject value"]
-                     [:li.fragment "If function evaluates to false, assoc an error"]]]                  
+                    [:h1 "How?"]]                  
                    [:section
                     [:div.fragment
                      [:pre {:class "brush: clojure" } 
@@ -70,13 +69,12 @@
                    [:section
                     [:h1 "Built in validators"]
                     [:ul
-                     [:li
-                      [:code "numeric"]]
                      [:li [:code "required"]]
-                     [:li [:code "member-of ;; (member-of #{:a :b :c})"]]
-                     [:li [:code "in-range ;; (in-range 1 10)"]]
-                     [:li [:code "subset-of ;; (subset-of #{:a :b :c})"]]
-                     [:li [:code "matches ;; (matches #\"foo\")"]]
+                     [:li [:code "numeric"]]
+                     [:li [:code "member-of"]]
+                     [:li [:code "in-range"]]
+                     [:li [:code "subset-of"]]
+                     [:li [:code "matches"]]
                      [:li [:code "matches-email"]]]]
                    [:section
                     [:h1 "Custom Validators"]
