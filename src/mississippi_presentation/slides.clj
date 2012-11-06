@@ -77,7 +77,31 @@
                      [:li [:code "matches"]]
                      [:li [:code "matches-email"]]]]
                    [:section
-                    [:h1 "Custom Validators"]]
+                    [:h1 "Custom Validators"]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" }  code/custom]]]
+                   [:section
+                    [:br]
+                    [:pre {:class "brush: clojure" }
+                     code/what-is-mississippi]
+                    [:br]
+                    [:pre {:class "brush: clojure" }
+                     code/errors]]
+                   [:section
+                    [:h1 "Multiple Validations"]]
+                   [:section
+                    [:br]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } code/multiple-validations]]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } code/multiple-subjects]]
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } code/apply-multiple-validations]]]
+                   [:section
+                    [:div.fragment
+                     [:pre {:class "brush: clojure" } code/multiple-errors]]]
+                   [:section
+                    [:h1 "Why?"]]
                    [:section
                     [:img {:src "/images/homepage.png"}]]
                    [:section
@@ -121,8 +145,7 @@
                      [:a {:href "https://twitter.com/ryangreenhall"} "@gar3thjon3s"] ", "
                      [:a {:href "http://twitter.com/jon_neale"} "@jon_neale"]]
                     [:p 
-                     "Slides are available at: "[:a {:href "http://skillsmatter-mississippi.heroku.com"} "http://skillsmatter-mississippi.heroku.com"]]]
-                   ]]
+                     "Slides are available at: "[:a {:href "http://skillsmatter-mississippi.heroku.com"} "http://skillsmatter-mississippi.heroku.com"]]]]]
                  [:script {:src "/syntaxhighlighter/scripts/shCore.js"}]
                  [:script {:src "/js/jquery-1.8.2.min.js"}]
                  [:script {:src "/clojure/shBrushClojure.js"}]
