@@ -79,9 +79,8 @@
                      [:li [:code "matches"]]
                      [:li [:code "matches-email"]]]]
                    [:section
-                    [:h1 "Custom Validators"]
-
-                    [:section
+                    [:h1 "Custom Validators"]]
+                   [:section
                     [:img {:src "/images/homepage.png"}]]
                    [:section
                     [:img {:src "/images/process.png"}]]
