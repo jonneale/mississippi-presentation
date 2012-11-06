@@ -1,10 +1,10 @@
 # mississippi-presentation
 
-A Clojure library designed to ... well, that part is up to you.
+A presentation of the Mississippi map validation library, presented at Skills Matter on Nov. 6th 2012
 
 ## Usage
 
-FIXME
+bin/run.sh will run the server on port 4000
 
 ## License
 
