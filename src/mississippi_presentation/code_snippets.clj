@@ -5,7 +5,8 @@
   "(defn should-be-of-length
   [length & {when-fn :when}]
   [#(= (count (str %)) length)	  
-   :msg (str \"length must be \" length) 
+   :msg (str \"length must be \"
+             length) 
    :when when-fn)])")
 
 (def subject
@@ -57,7 +58,7 @@
    [(required) (numeric)]})")
 
 (def multiple-subjects
-  "def subjects
+  "(def subjects
   [{:name \"alice\"
     :year-of-birth nil}
    {:name \"bob\"

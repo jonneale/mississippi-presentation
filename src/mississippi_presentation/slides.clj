@@ -73,43 +73,15 @@
                      [:li
                       [:code "numeric"]]
                      [:li [:code "required"]]
-                     [:li [:code "member-of ;; (member-of #{:a :b :c})"]]
-                     [:li [:code "in-range ;; (in-range 1 10)"]]
-                     [:li [:code "subset-of ;; (subset-of #{:a :b :c})"]]
-                     [:li [:code "matches ;; (matches #\"foo\")"]]
+                     [:li [:code "member-of"]]
+                     [:li [:code "in-range"]]
+                     [:li [:code "subset-of"]]
+                     [:li [:code "matches"]]
                      [:li [:code "matches-email"]]]]
                    [:section
                     [:h1 "Custom Validators"]
 
-                    [:pre
-                     {:class "brush: clojure" } code/custom]]
-                   [:section
-                    [:br]
-                    [:pre {:class "brush: clojure" }
-                     code/what-is-mississippi]
-                    [:br]
-                    [:pre {:class "brush: clojure" }
-                     code/errors]]
-                   [:section
-                    [:h1 "Multiple Validations"]]
-                   [:section
-                    [:div.fragment
-                     [:pre {:class "brush: clojure" }
-                      code/multiple-validations]]
-                    [:div.fragment
-                     [:pre {:class "brush: clojure" }
-                      code/multiple-subjects]]
-                    [:div.fragment
-                     [:pre {:class "brush: clojure" }
-                      code/apply-multiple-validations]]]
-                   [:section
-                    [:pre {:class "brush: clojure" }
-                     code/multiple-errors]]
-                   [:section
-                    [:h1 "Why?"]]
-                   [:section
-                    [:h1 "Explicit contracts at integration points"]]
-                   [:section
+                    [:section
                     [:img {:src "/images/homepage.png"}]]
                    [:section
                     [:img {:src "/images/process.png"}]]
@@ -133,7 +105,7 @@
                    [:section
                     [:h1 "Our (actual) Validations"]]
                    [:section
-                    [:pre {:class "brush: clojure" }
+                    [:pre {:class "brush: clojure gutter: false;" }
                      code/gas-direct-debit]]
                    [:section
                     [:h1 "Mississippi"]
